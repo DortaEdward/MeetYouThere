@@ -18,3 +18,58 @@ model Post {
 
     @@index([name])
 }
+
+model User {
+    id            String  @id @default(uuid())
+    username      String?
+    first_name    String?
+    last_name     String?
+    email         String?
+    clerk_id      String  @unique
+    profile_image String?
+    subscribed    Boolean @default(false)
+
+    ownedGroups Group[] @relation("UserOwnedGroups")
+    groups Group[] @relation("GroupMembers")
+}
+
+model Location {
+    id        String  @id @default(uuid())
+    name      String
+    image_url String?
+    Group     Group   @relation(fields: [groupId], references: [id])
+    groupId   String
+    address   String?
+}
+
+
+// Work on this
+model Activities {
+    id        String      @id @default(uuid())
+    Itinerary Itinerary[]
+    images String[]
+    name      String
+    expense   Int
+}
+
+model Itinerary {
+    id           String     @id @default(uuid())
+    Group        Group      @relation(fields: [groupId], references: [id])
+    groupId      String
+    activities   Activities @relation(fields: [activitiesId], references: [id])
+    activitiesId String
+}
+
+model Group {
+    id         String    @id @default(uuid())
+    name       String
+    start_date DateTime  @default(now())
+    end_date   DateTime?
+
+    ownerId String
+    owner   User   @relation("UserOwnedGroups", fields: [ownerId], references: [id])
+
+    users     User[]      @relation("GroupMembers")
+    locations Location[]
+    itinerary Itinerary[]
+}
