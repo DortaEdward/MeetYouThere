@@ -11,7 +11,7 @@ export default function HeroSection() {
                             <p className="max-w-[600px] text-neutral-400 md:text-xl">From picking dates to booking spots, MeetYouThere keeps your crew organized and excited</p>
                         </div>
                         <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                            <Button size={"lg"} className="bg-red-500 hover:bg-red-600">Get Started</Button>
+                            <Button size={"lg"} className="bg-teal-500 hover:bg-red-600">Get Started</Button>
                             <Button size={"lg"} variant={"outline"}>See How it works</Button>
                         </div>
                         <p className="text-xs text-muted-foreground">No credit card required to start. Free for groups up to 5 people.</p>
