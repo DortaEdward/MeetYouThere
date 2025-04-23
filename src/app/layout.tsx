@@ -22,9 +22,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
-      <body>
+      <body className="overflow-x-hidden">
         <TRPCReactProvider>
-          <div className="min-w-screen min-h-screen bg-neutral-800 flex flex-col">
+          <div className="min-w-screen bg-neutral-800 flex flex-col overflow-x-hidden">
             <Header />
             {children}
           </div>
