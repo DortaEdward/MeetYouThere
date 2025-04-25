@@ -4,14 +4,14 @@ import { CheckCircle } from "lucide-react";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="w-full bg-teal-50 py-12 md:py-24 lg:py-32">
+    <section id="pricing" className="w-full bg-neutral-800 py-12 md:py-24 lg:py-32 flex items-center justify-center">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-teal-100 px-3 py-1 text-sm text-teal-700">
               Pricing
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-50">
               Simple, Transparent Pricing
             </h2>
             <p className="text-muted-foreground max-w-[900px] md:text-xl/relaxed">

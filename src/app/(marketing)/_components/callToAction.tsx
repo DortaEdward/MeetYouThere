@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export default function CallToAction() {
   return (
-    <section className="w-full bg-teal-600 py-12 text-white md:py-24 lg:py-32">
+    <section className="w-full bg-teal-900 py-12 text-white md:py-24 lg:py-32 flex items-center justify-center">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -24,7 +24,7 @@ export default function CallToAction() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-teal-700"
+              className="bg-transparent"
             >
               Schedule a Demo
             </Button>

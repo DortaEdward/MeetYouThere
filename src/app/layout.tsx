@@ -5,6 +5,7 @@ import { Geist } from "next/font/google";
 
 import { TRPCReactProvider } from "@/trpc/react";
 import Header from "./_components/header";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -22,13 +23,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
-      <body className="overflow-x-hidden">
-        <TRPCReactProvider>
-          <div className="min-w-screen bg-neutral-800 flex flex-col overflow-x-hidden">
-            <Header />
-            {children}
-          </div>
-        </TRPCReactProvider>
+      <body className="">
+        <ClerkProvider>
+          <TRPCReactProvider>
+            <div className="flex min-w-screen flex-col overflow-x-hidden bg-neutral-800">
+              <Header />
+              {children}
+            </div>
+          </TRPCReactProvider>
+        </ClerkProvider>
       </body>
     </html>
   );

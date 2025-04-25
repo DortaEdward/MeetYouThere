@@ -30,7 +30,7 @@ model User {
     subscribed    Boolean @default(false)
 
     ownedGroups Group[] @relation("UserOwnedGroups")
-    groups Group[] @relation("GroupMembers")
+    groups      Group[] @relation("GroupMembers")
 }
 
 model Location {
@@ -42,12 +42,11 @@ model Location {
     address   String?
 }
 
-
 // Work on this
 model Activities {
     id        String      @id @default(uuid())
     Itinerary Itinerary[]
-    images String[]
+    images    String[]
     name      String
     expense   Int
 }
@@ -58,6 +57,7 @@ model Itinerary {
     groupId      String
     activities   Activities @relation(fields: [activitiesId], references: [id])
     activitiesId String
+    public       Boolean    @default(false)
 }
 
 model Group {

@@ -4,7 +4,7 @@ import { Facebook, Instagram, Twitter } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="w-full py-12">
+    <footer className="w-full py-12 px-6">
       <div className="container mx-auto flex flex-wrap items-start justify-between gap-6">
         <div className="flex flex-col gap-4 text-gray-50">
           <Logo />

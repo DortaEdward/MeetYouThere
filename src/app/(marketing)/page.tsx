@@ -2,7 +2,6 @@ import HeroSection from "./_components/heroSection";
 import KeyFeatures from "./_components/keyFeatures";
 import Footer from "./_components/footer";
 import HowItWorks from "./_components/howItWorks";
-import Testimonials from "./_components/testimonials";
 import Pricing from "./_components/pricing";
 import CallToAction from "./_components/callToAction";
 
@@ -12,7 +11,6 @@ export default async function Home() {
       <HeroSection />
       <KeyFeatures />
       <HowItWorks />
-      <Testimonials />
       <Pricing />
       <CallToAction />
       <Footer />
