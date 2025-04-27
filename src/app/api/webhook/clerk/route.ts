@@ -5,12 +5,12 @@ import { NextResponse } from 'next/server'
 import QUERIES from '@/server/db/queries';
 
 export async function POST(req: Request) {
-  const SIGNING_SECRET = process.env.SIGNING_SECRET
-  if (!SIGNING_SECRET) {
-    throw new Error('Error: Please add SIGNING_SECRET from Clerk Dashboard to .env or .env.local')
+  const CLERK_WEBHOOK_SIGNING_SECRET = process.env.CLERK_WEBHOOK_SIGNING_SECRET
+  if (!CLERK_WEBHOOK_SIGNING_SECRET) {
+    throw new Error('Error: Please add CLERK_WEBHOOK_SIGNING_SECRET from Clerk Dashboard to .env or .env.local')
   }
 
-  const wh = new Webhook(SIGNING_SECRET)
+  const wh = new Webhook(CLERK_WEBHOOK_SIGNING_SECRET)
 
   const headerPayload = await headers()
   const svix_id = headerPayload.get('svix-id')
