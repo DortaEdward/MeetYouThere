@@ -12,7 +12,6 @@ function ErrorHandler(error: Error) {
 
 const QUERIES = {
   async createUser(user: CreateUserPayload) {
-    console.log("Create user payload:", user);
     try {
       const newUser = await db.user.create({
         data: {
@@ -26,9 +25,6 @@ const QUERIES = {
       })
 
       if (!newUser) return;
-
-      console.log("This is the new user: ", newUser);
-
       return newUser.id;
 
     } catch (error) {
